@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>OceanGate — Products</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap + Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {}
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f7f9fc;
+            color: #0b2540;
+            --brand: #005b88;
+            --accent: #00E5FF;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: linear-gradient(to right,
+                    #001F3F 33%,
+                    #023569 37%,
+                    #002c57 39%,
+                    #012950 41%,
+                    #013568 42%,
+                    #002c57 43%,
+                    #024380 44%,
+                    #002c57 45%,
+                    #042f5b 46%,
+                    #023569 47%,
+                    #042b52 48%,
+                    #023364 49%,
+                    #012e5b 50%,
+                    #07396a 51%,
+                    #024380 52%,
+                    #033262 53%,
+                    #053463 54%,
+                    #022c56 55%,
+                    #033a6e 57%,
+                    #032f5b 58%,
+                    #033461 59%,
+                    #012b54 62%,
+                    #04396e 64%,
+                    #05315c 65%,
+                    #024282 66%,
+                    #033669 67%,
+                    #012c54 68%,
+                    #013669 69%,
+                    #01407a 75%,
+                    #479ef5 100%);
+            padding: 0.6rem 0;
+            backdrop-filter: blur(2px);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 600;
+        }
+
+        .logo-icon svg {
+            width: 45px;
+            height: 45px;
+            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .logo-text h1 {
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: #00E5FF;
+        }
+
+        .logo-text h1 span {
+            color: #ffffff;
+        }
+
+        .logo-text p {
+            margin: 0;
+            font-size: 10px;
+            color: #CCCCCC;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes glow {
+            0% {
+                stroke: #00E5FF;
+            }
+
+            50% {
+                stroke: #002B55;
+            }
+
+            100% {
+                stroke: #00E5FF;
+            }
+        }
+
+        @keyframes glow1 {
+            0% {
+                stroke: #002B55;
+            }
+
+            50% {
+                stroke: #00E5FF;
+            }
+
+            100% {
+                stroke: #002B55;
+            }
+        }
+
+        .logo-icon circle {
+            animation: glow 4s infinite ease-in-out;
+        }
+
+        .logo-icon path {
+            animation: glow1 4s infinite ease-in-out;
+        }
+
+        .animated-text {
+            font-size: 30px;
+            font-weight: bold;
+            animation: colorChange 4s infinite ease-in-out;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #00E5FF;
+            }
+
+            50% {
+                color: #002B55;
+            }
+
+            100% {
+                color: #00E5FF;
+            }
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            padding: 8px 16px !important;
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00E5FF !important;
+        }
+
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-toggler {
+            border-color: #99d7ff;
+        }
+
+        .navbar-toggler-icon {
+            filter: brightness(0) invert(1);
+        }
+
+
+        /* Product Cards */
+        .card-product {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            box-shadow: 0 10px 30px rgba(3, 37, 65, .06);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.6s forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            filter: drop-shadow(1px 1px 7px rgb(1, 27, 83));
+        }
+
+        .card-product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(3, 37, 65, 0.12);
+        }
+
+        .product-thumb {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 12px;
+        }
+
+        /* Checkbox animation */
+        .form-check-input:checked {
+            transform: scale(1.2);
+            transition: transform 0.2s ease;
+        }
+
+        footer {
+            background: linear-gradient(to right, #001F3F 33%,
+                    #023569 37%,
+                    #002c57 39%,
+                    #012950 41%,
+                    #013568 42%,
+                    #002c57 43%,
+                    #024380 44%,
+                    #002c57 45%,
+                    #042f5b 46%,
+                    #023569 47%,
+                    #042b52 48%,
+                    #023364 49%,
+                    #012e5b 50%,
+                    #07396a 51%,
+                    #024380 52%,
+                    #033262 53%,
+                    #053463 54%,
+                    #022c56 55%,
+                    #033a6e 57%,
+                    #032f5b 58%,
+                    #033461 59%,
+                    #012b54 62%,
+                    #04396e 64%,
+                    #05315c 65%,
+                    #024282 66%,
+                    #033669 67%,
+                    #012c54 68%,
+                    #013669 69%,
+                    #01407a 75%,
+                    #479ef5 100%);
+            color: #dfefff;
+            padding: 1.2rem 0;
+        }
+
+        footer a {
+            color: #00E5FF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* SOCIAL ICONS */
+        .social-icons a {
+            font-size: 1.4rem;
+            color: var(--brand);
+            margin-right: 1rem;
+            transition: 0.3s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* main buttons */
+
+        /* ---------------------- Brand Buttons Wrapper ---------------------- */
+        .Bbtn {
+            display: flex;
+            flex-wrap: wrap;
+            /* allow multiple lines if many buttons */
+            justify-content: center;
+            /* center buttons */
+            gap: 0.25rem;
+            /* reduce space between brand buttons */
+        }
+
+        /* ---------------------- Brand Buttons ---------------------- */
+        .brand-btn {
+            text-align: center;
+            flex: 0 1 auto;
+            min-width: 100px;
+            max-width: 160px;
+            padding: 0.7em 1.5em;
+            border-radius: 0.5em;
+            font-weight: bold;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            /* existing glow styling preserved */
+            --glow-color: rgb(76, 168, 229);
+            --glow-spread-color: rgba(82, 136, 229, 0.954);
+            --btn-color: #042a51;
+            background-color: var(--btn-color);
+            color: var(--glow-color);
+            box-shadow: 0 0 0.2em 0.1em var(--glow-color),
+                0 0 1.5em 0.25em var(--glow-spread-color),
+                inset 0 0 0.34em 0.1em var(--glow-color);
+        }
+
+        .brand-btn:hover,
+        .brand-btn.active {
+            background-color: var(--glow-color);
+            color: #06243f;
+            box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 0.5em 0.3em var(--glow-spread-color),
+                inset 0 0 0.3em 0.25em var(--glow-color);
+            text-shadow: 0 0 0.3em #06243f;
+        }
+
+        /* ---------------------- Action Buttons ---------------------- */
+        #clearCompare,
+        #doCompare {
+            flex: 0 1 auto;
+            min-width: 120px;
+            max-width: 160px;
+            padding: 0.7em 2em;
+            border-radius: 0.5em;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s;
+            /* margin-bottom: 20px; */
+        }
+
+        /* Preserve your glow styles */
+        #clearCompare {
+            --glow-color: rgb(49, 164, 240);
+            --glow-spread-color: rgba(82, 136, 229, 0.954);
+            --btn-color: #05315d;
+            background-color: var(--glow-color);
+            color: var(--btn-color);
+            box-shadow: 0 0 0.2em 0.1em var(--btn-color),
+                0 0 1.5em 0.25em var(--glow-spread-color),
+                inset 0 0 0.34em 0.1em var(--btn-color);
+        }
+
+        #doCompare {
+            --glow-color: rgb(76, 174, 239);
+            --glow-spread-color: rgba(82, 136, 229, 0.954);
+            --btn-color: #05315d;
+            background-color: var(--btn-color);
+            color: var(--glow-color);
+            box-shadow: 0 0 0.2em 0.1em var(--glow-color),
+                0 0 1.5em 0.25em var(--glow-spread-color),
+                inset 0 0 0.34em 0.1em var(--glow-color);
+        }
+
+        /* Hover & Active States */
+        #clearCompare:hover {
+            color: var(--glow-color);
+            background-color: var(--btn-color);
+            box-shadow: 0 0 0.5em 0.1em var(--btn-color),
+                0 0 1.5em 0.5em var(--glow-spread-color),
+                inset 0 0 0.33em 0.1em var(--glow-color);
+        }
+
+        #clearCompare:active {
+            background-color: var(--btn-color);
+            color: #06243f;
+            box-shadow: 0 0 0.6em 0.25em var(--btn-color),
+                0 0 0.5em 0.3em var(--glow-spread-color),
+                inset 0 0 0.3em 0.25em var(--btn-color);
+        }
+
+        #doCompare:hover {
+            color: var(--btn-color);
+            background-color: var(--glow-color);
+            box-shadow: 0 0 0.5em 0.1em var(--glow-color),
+                0 0 1.5em 0.5em var(--glow-spread-color),
+                inset 0 0 0.33em 0.1em var(--glow-color);
+        }
+
+        #doCompare:active {
+            background-color: var(--glow-color);
+            color: #06243f;
+            box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 0.5em 0.3em var(--glow-spread-color),
+                inset 0 0 0.3em 0.25em var(--glow-color);
+        }
+
+        /* ---------------------- Responsive Adjustments ---------------------- */
+        @media (max-width: 768px) {
+
+            .Bbtn,
+            .d-flex.justify-content-between>div:last-child {
+                justify-content: center;
+                gap: 0.25rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .brand-btn,
+            #clearCompare,
+            #doCompare {
+                min-width: 80px;
+                max-width: 140px;
+                font-size: 14px;
+                padding: 0.5em 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .brand-btn,
+            #clearCompare,
+            #doCompare {
+                min-width: 70px;
+                max-width: 120px;
+                font-size: 13px;
+                padding: 0.4em 0.8em;
+            }
+        }
+
+
+        /* Parent Container */
+        .main-content-wrapper {
+
+            box-sizing: border-box;
+            display: flex;
+            width: 100%;
+            max-width: 100% !important;
+            /* ← FIX */
+            margin: 30px auto;
+            align-items: stretch !important;
+
+        }
+
+
+
+        /* Paragraph Section (70% width) */
+        .paragraph-section {
+
+            padding: 25px;
+            background: linear-gradient(180deg, #e0f2f7 0%, #a7d9ed 100%);
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+            flex: 6;
+            /* equal width */
+            margin-right: 20px;
+            height: auto;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        .paragraph-section h2 {
+            font-weight: bold;
+            text-align: center;
+            /* margin-bottom: 15px; */
+            color: #013568;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .paragraph-section p {
+            /* line-height: 1.6; */
+            color: #444;
+        }
+
+        /* Animation Section (30% width) */
+        .pro-ani {
+            /* flex: 3; */
+            /* 30% width */
+            /* height: 221px; */
+            /* Height to match the text box */
+            position: relative;
+            overflow: hidden;
+            /* Essential for containing animations */
+            background: linear-gradient(180deg, #e0f2f7 0%, #a7d9ed 100%);
+
+            /* Lighter sky/cloud gradient */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 5;
+            flex: 3;
+            /* equal width */
+            height: auto !important;
+            min-height: 268px;
+            /* to look good */
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* --- Rain Animation (CSS Only) --- */
+
+        /* Keyframes for the 'Raindrop' motion */
+        @keyframes rainFall {
+            0% {
+                transform: translateY(-10%);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(350%);
+                opacity: 0;
+            }
+        }
+
+        /* Style for the 'Raindrop' elements */
+        .raindrop {
+            position: absolute;
+            width: 3px;
+            height: 15px;
+            background: linear-gradient(to bottom, rgba(0, 119, 182, 0) 0%, rgba(0, 119, 182, 0.8) 50%, rgba(0, 119, 182, 0) 100%);
+            border-radius: 2px;
+            opacity: 0;
+            animation-name: rainFall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            z-index: 7;
+            /* Raindrops should be above water ripples */
+        }
+
+        /* Placing and sequencing the raindrops (more drops for better effect) */
+        .raindrop:nth-child(1) {
+            left: 10%;
+            animation-duration: 2s;
+            animation-delay: 0s;
+        }
+
+        .raindrop:nth-child(2) {
+            left: 30%;
+            animation-duration: 2.5s;
+            animation-delay: 0.5s;
+        }
+
+        .raindrop:nth-child(3) {
+            left: 50%;
+            animation-duration: 1.8s;
+            animation-delay: 1s;
+        }
+
+        .raindrop:nth-child(4) {
+            left: 70%;
+            animation-duration: 2.2s;
+            animation-delay: 1.5s;
+        }
+
+        .raindrop:nth-child(5) {
+            left: 90%;
+            animation-duration: 2.8s;
+            animation-delay: 2s;
+        }
+
+        .raindrop:nth-child(6) {
+            left: 20%;
+            animation-duration: 1.5s;
+            animation-delay: 2.5s;
+        }
+
+        .raindrop:nth-child(7) {
+            left: 40%;
+            animation-duration: 3s;
+            animation-delay: 0.2s;
+        }
+
+        .raindrop:nth-child(8) {
+            left: 60%;
+            animation-duration: 2.3s;
+            animation-delay: 0.8s;
+        }
+
+        .raindrop:nth-child(9) {
+            left: 80%;
+            animation-duration: 1.9s;
+            animation-delay: 1.3s;
+        }
+
+        .raindrop:nth-child(10) {
+            left: 5%;
+            animation-duration: 2.7s;
+            animation-delay: 1.8s;
+        }
+
+        .raindrop:nth-child(11) {
+            left: 25%;
+            animation-duration: 2.1s;
+            animation-delay: 2.3s;
+        }
+
+        .raindrop:nth-child(12) {
+            left: 45%;
+            animation-duration: 2.6s;
+            animation-delay: 0.7s;
+        }
+
+        .raindrop:nth-child(13) {
+            left: 15%;
+            animation-duration: 2.3s;
+            animation-delay: 1.2s;
+        }
+
+        .raindrop:nth-child(14) {
+            left: 35%;
+            animation-duration: 2.9s;
+            animation-delay: 1.7s;
+        }
+
+        .raindrop:nth-child(15) {
+            left: 55%;
+            animation-duration: 1.7s;
+            animation-delay: 2.2s;
+        }
+
+        /* Adding more for a denser rain effect */
+        .raindrop:nth-child(16) {
+            left: 65%;
+            animation-duration: 2.4s;
+            animation-delay: 0.3s;
+        }
+
+        .raindrop:nth-child(17) {
+            left: 75%;
+            animation-duration: 2.0s;
+            animation-delay: 0.9s;
+        }
+
+        .raindrop:nth-child(18) {
+            left: 85%;
+            animation-duration: 2.6s;
+            animation-delay: 1.4s;
+        }
+
+
+        /* --- Water Ripple Animation (CSS Only) --- */
+
+        @keyframes waterRipple {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .water-ripple {
+            position: absolute;
+            bottom: 0;
+            /* Position at the bottom of the animation container */
+            left: 0;
+            right: 0;
+            height: 50%;
+            /* Water takes up the bottom half */
+            background: linear-gradient(to top, #0077b6 0%, #0099e6 100%);
+
+            /* Deep to light blue for water body */
+            z-index: 6;
+            /* Below raindrops, above background */
+            display: flex;
+            /* To center ripples if needed */
+            justify-content: center;
+            align-items: flex-end;
+            /* Align ripples to the top of the water body */
+        }
+
+        .ripple {
+            position: absolute;
+            width: 30px;
+            /* Size of the ripple */
+            height: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            /* White/light blue ripple effect */
+            border-radius: 50%;
+            animation: waterRipple 3s ease-out infinite;
+            transform-origin: center;
+            /* Ensures scaling from center */
+        }
+
+        /* Staggering ripples */
+        .ripple:nth-child(1) {
+            bottom: 10px;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .ripple:nth-child(2) {
+            bottom: 5px;
+            left: 60%;
+            animation-delay: 1s;
+            width: 40px;
+            height: 40px;
+            border-width: 3px;
+        }
+
+        .ripple:nth-child(3) {
+            bottom: 15px;
+            left: 40%;
+            animation-delay: 2s;
+        }
+
+        .ripple:nth-child(4) {
+            bottom: 0px;
+            left: 80%;
+            animation-delay: 0.5s;
+            width: 25px;
+            height: 25px;
+        }
+
+        .ripple:nth-child(5) {
+            bottom: 8px;
+            left: 10%;
+            animation-delay: 1.5s;
+        }
+
+        .ripple:nth-child(6) {
+            bottom: 12px;
+            left: 70%;
+            animation-delay: 2.5s;
+            width: 35px;
+            height: 35px;
+            border-width: 2.5px;
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-content-wrapper {
+                flex-direction: column;
+            }
+
+            .paragraph-section {
+                flex: none;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+                padding: 15px;
+            }
+
+            .pro-ani {
+                flex: none;
+                width: 100%;
+                height: 150px;
+                /* Adjusted height for mobile to accommodate water */
+            }
+
+            .water-ripple {
+                height: 70px;
+                /* Adjust water height for mobile */
+            }
+
+            .ripple {
+                width: 20px;
+                height: 20px;
+                border-width: 1px;
+            }
+        }
+
+        #mncon {
+            background: linear-gradient(to right, #001F3F 33%,
+                    #023569 37%,
+                    #002c57 39%,
+                    #012950 41%,
+                    #013568 42%,
+                    #002c57 43%,
+                    #024380 44%,
+                    #002c57 45%,
+                    #042f5b 46%,
+                    #023569 47%,
+                    #042b52 48%,
+                    #023364 49%,
+                    #012e5b 50%,
+                    #07396a 51%,
+                    #024380 52%,
+                    #033262 53%,
+                    #053463 54%,
+                    #022c56 55%,
+                    #033a6e 57%,
+                    #032f5b 58%,
+                    #033461 59%,
+                    #012b54 62%,
+                    #04396e 64%,
+                    #05315c 65%,
+                    #024282 66%,
+                    #033669 67%,
+                    #012c54 68%,
+                    #013669 69%,
+                    #01407a 75%,
+                    #479ef5 100%);
+            color: #dfefff;
+            padding-top: 0.5rem;
+        }
+
+        .social-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            color: rgb(255, 255, 255);
+            transition: all 0.3s ease;
+        }
+
+        .social-circle:hover {
+            background: #00c6ff;
+            box-shadow: 0 0 10px #00c6ff;
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer-social {
+            justify-content: center !important;
+            width: 100%;
+        }
+
+
+        /* Floating Scroll-to-Top Button */
+        .footer-circle-btn {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 58px;
+            height: 58px;
+            background: linear-gradient(135deg, #1060a2, #022948);
+            /* OceanGate Dark Blue */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+            transition: 0.3s ease;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Show button when scrolling */
+        .footer-circle-btn.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Hover Effect */
+        .footer-circle-btn:hover {
+            background: linear-gradient(135deg, #0d4777, #011b31);
+            /* Lighter Blue */
+            box-shadow: 0 0 18px rgba(30, 106, 176, 0.7);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand text-white d-flex align-items-center" href="#">
+                <div class="logo-pro d-flex align-items-center gap-2">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 120 120" width="50" height="50">
+                            <defs>
+                                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00E5FF" />
+                                    <stop offset="100%" style="stop-color:#007BFF" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="60" cy="60" r="50" stroke="url(#grad)" stroke-width="6" fill="none" />
+                            <path d="M10 70 Q40 30 70 70 T130 70" stroke="#00E5FF" stroke-width="5" fill="none" />
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1 style="font-weight: bold ; padding-top: 5px;" class="animated-text">
+                            𝕆ℂ𝔼𝔸ℕ<span>𝔾𝔸𝕋𝔼</span>
+                        </h1>
+                        <p style="padding: 3px;"> <i>Innovating Data Storage</i></p>
+                    </div>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="mncon">
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="paragraph-section col-lg-7">
+                    <h2 class="p-3">Products Catalog</h2>
+                    <p>Ocean Gate offers a wide-ranging catalog of reliable data storage devices, from portable SSDs and
+                        external
+                        hard drives for personal use to NAS-optimized drives for businesses. They also provide
+                        high-capacity
+                        Exos
+                        HDDs and Nytro SSDs for massive enterprise and cloud data centers, ensuring performance,
+                        capacity,
+                        and
+                        security across all scales.</p>
+                </div>
+                <div class="pro-ani ">
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+                    <div class="raindrop"></div>
+
+                    <div class="water-ripple">
+                        <div class="ripple"></div>
+                        <div class="ripple"></div>
+                        <div class="ripple"></div>
+                        <div class="ripple"></div>
+                        <div class="ripple"></div>
+                        <div class="ripple"></div>
+                    </div>
+                </div>
+
+            </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="py-5">
+
+
+        <!-- Brand buttons -->
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div class="Bbtn " id="brandButtons">
+                </div>
+                <div>
+                    <button class="action-btn " id="clearCompare">Clear</button>
+                    <button class="action-btn  ms-2" id="doCompare">Compare</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="row g-3" id="productGrid"></div>
+
+            <!-- Compare Modal -->
+            <div class="modal fade" id="compareModal" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>Compare Products</h5>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body" id="compareContent"></div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container py-3">
+
+            <!-- Top Section -->
+            <div class="row">
+                <div class="col-md-6 ">
+                    <h4 class="text-primary fw-bold">Ocean Gate</h4>
+                    <p>
+                        OceanGate is your trusted storage devices program — delivering best product,
+                        variety and guarenteed products and services with reliability and excellence.
+                    </p>
+                </div>
+
+                <!-- Services -->
+                <div class="col-md-3">
+                    <h5 class="text-primary fw-semibold">Services</h5>
+                    <ul class="list-unstyled text-small ">
+                        <li>Good product</li>
+                        <li>Repairing services</li>
+                    </ul>
+                </div>
+
+
+                <!-- About -->
+                <div class="col-md-3">
+                    <h5 class="text-primary fw-semibold">Company</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="link-light" href="index.html#about">About Us</a></li>
+                        <li><a class="link-light" href="support.html#team">Team</a></li>
+                        <li><a class="link-light" href="support.html">Support</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Divider -->
+            <hr>
+
+            <!-- Bottom -->
+            <div class="text-center mb-4">
+
+                <h5 class="fw-bold mb-3">Follow Us</h5>
+
+                <div class="d-flex justify-content-center gap-3 footer-social">
+
+                    <a href="https://www.facebook.com/" target="_blank" class="social-circle">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/" target="_blank" class="social-circle">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="https://wa.me/923001234567" target="_blank" class="social-circle">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/" target="_blank" class="social-circle">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/" target="_blank" class="social-circle">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                </div>
+
+                <a href="#" id="scrollTopBtn" class="footer-circle-btn">
+                    <i class="bi bi-chevron-up"></i>
+                </a>
+
+
+                    <!-- Bottom Row -->
+                <div>
+                    <div class="text-center">© 2025 OceanGate. All rights reserved.</div>
+
+                </div>  
+
+            </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        const products = [
+            // ------------------ OCEANGATE ------------------
+            { id: 1, brand: 'OceanGate', title: 'CD-R 700MB (25-pack)', type: 'Optical', speed: '52x', price: '$12.99', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsLMw0lqsyoMiOXClLgaID4Ti5MlgMFh0-kQ&s', brief: '700MB disc, printable surface' },
+            { id: 2, brand: 'OceanGate', title: 'DVD-R 4.7GB (25-pack)', type: 'Optical', speed: '16x', price: '$19.99', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkev4OARlH6dTlXQPCSXoiF7Jhc_0H01KawA&s', brief: '4.7GB single layer' },
+            { id: 3, brand: 'OceanGate', title: 'CD-R 80min (50-pack)', type: 'Optical', speed: '48x', price: '$22.00', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyEMxx72YwMpVWKPvTueftXQtwSiz5VPp5vA&s', brief: '80 min audio CDs' },
+            { id: 4, brand: 'OceanGate', title: 'Blu-ray 50GB (10-pack)', type: 'Optical', speed: '6x', price: '$39.00', img: 'https://image.made-in-china.com/365f3j00TQVvtRKdZMcm/Bd-R-25GB-50GB-100GB-8X-Blu-Ray-Recordable-Media-Disc-Double-Layer.webp', brief: 'Dual layer BD-R' },
+            { id: 5, brand: 'OceanGate', title: 'OceanGate USB 64GB', type: 'Flash Storage', speed: '150MB/s', price: '$15.00', img: 'https://static3.webx.pk/files/19643/Images/oscoo-cu002-otg-price-in-pakistan-junaidtech-1-19643-2461623-021025123541398.webp', brief: 'High-speed USB 3.0' },
+
+            // ------------------ MAGNASTORE ------------------
+            { id: 6, brand: 'MagnaStore', title: 'External HDD 1TB', type: 'Magnetic', speed: '5400RPM', price: '$49.00', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk-BZ_HZKSeD5Yzh1PavzeNP3orpKqFfLhkg&s', brief: '1TB portable HDD, USB 3.0' },
+            { id: 7, brand: 'MagnaStore', title: 'External HDD 2TB', type: 'Magnetic', speed: '7200RPM', price: '$79.00', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlSxny2-nUA7rrERYCzeA0TtoGZYQYpqE9Xw&s', brief: '2TB portable HDD, USB 3.1' },
+            { id: 8, brand: 'MagnaStore', title: 'External SSD 1TB', type: 'Solid State', speed: '1050MB/s', price: '$119.00', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_w0NU1LiJA2h5xq5aC7UoQ8G4_RcttxgXw&s', brief: '1TB portable SSD, USB-C' },
+            { id: 9, brand: 'MagnaStore', title: 'External SSD 512GB', type: 'Solid State', speed: '950MB/s', price: '$79.99', img: 'https://static3.webx.pk/files/4012/Images/hikvision-t200n-512gb-portable-ssd-price-in-pakistan-1-19643-4012-1964979-290124081022489.jpg', brief: 'High speed SSD' },
+            { id: 10, brand: 'MagnaStore', title: 'USB Flash 128GB', type: 'Flash Storage', speed: '180MB/s', price: '$22.00', img: 'https://mercurycomputerslimited.com/wp-content/uploads/2021/06/Sandisk-Ultra-USB-3.0-Memory-Stick-128-GB-FlashDisk-2.jpg', brief: 'USB 3.2 metal body' },
+
+            // ------------------ STOREPRO ------------------
+            { id: 11, brand: 'StorePro', title: 'SSD 256GB', type: 'Solid State', speed: '550MB/s', price: '$39.00', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdDRSFP_tFKS2oH_NKbt7RLZBHyFYy3885lQ&s', brief: 'SATA SSD 2.5"' },
+            { id: 12, brand: 'StorePro', title: 'SSD 512GB', type: 'Solid State', speed: '550MB/s', price: '$69.00', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaFhUZkV0tuGKNqx5RJwqq4DhsnE5_Gd7Mmg&s', brief: 'High-performance SATA SSD' },
+            { id: 13, brand: 'StorePro', title: 'NVMe SSD 1TB', type: 'Solid State', speed: '3400MB/s', price: '$89.00', img: 'https://vmart.pk/cdn/shop/files/Samsung-980-PCIe-3.0-NVMe-SSD-1TB-3.jpg?v=1737521019' },
+            { id: 14, brand: 'StorePro', title: 'NVMe SSD 2TB', type: 'Solid State', speed: '3500MB/s', price: '$149.00', img: 'https://m.media-amazon.com/images/I/616Dz0H+RoL.jpg', brief: 'High-speed gaming SSD' },
+            { id: 15, brand: 'StorePro', title: 'Blu-ray 25GB (10-pack)', type: 'Optical', speed: '6x', price: '$29.00', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSkQswHwP6f4gKEC86NXloUY1OIn_Sz0HMEA&s', brief: 'High-capacity BD-R' },
+
+            // ------------------ EXTRA PRODUCTS ------------------
+            { id: 16, brand: 'OceanGate', title: 'USB Type-C 256GB', type: 'Flash Storage', speed: '200MB/s', price: '$29.00', img: 'https://m.media-amazon.com/images/I/71R+CxjHxlL.AC_SL1500.jpg', brief: 'Dual Type-A + Type-C' },
+            { id: 17, brand: 'MagnaStore', title: 'External HDD 4TB', type: 'Magnetic', speed: '7200RPM', price: '$129.00', img: 'https://computerchoice.pk/wp-content/uploads/2023/09/WD-4TB-My-Book-.jpg', brief: 'Massive backup drive' },
+            { id: 18, brand: 'StorePro', title: 'NVMe Gen4 SSD 1TB', type: 'Solid State', speed: '5000MB/s', price: '$149.00', img: 'https://static.webx.pk/files/19643/Images/gigabyte-aorus-gen-4-7000s-ssd-price-in-pakistan-3-19643-0-260223121906660.jpg', brief: 'Next-gen PCIe Gen4' },
+        ];
+
+        const brandButtonsEl = document.getElementById('brandButtons');
+        const productGrid = document.getElementById('productGrid');
+        const clearBtn = document.getElementById('clearCompare');
+        const compareBtn = document.getElementById('doCompare');
+        const compareContent = document.getElementById('compareContent');
+
+        const brands = ['All', ...Array.from(new Set(products.map(p => p.brand)))];
+        let selected = new Set();
+
+        // ---------------- BRAND BUTTONS ------------------
+        function renderBrandButtons() {
+            brandButtonsEl.innerHTML = brands.map(b => `
+            <button type="button" class="brand-btn" data-brand="${b}">${b}</button>
+        `).join('');
+
+            brandButtonsEl.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    brandButtonsEl.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderProducts(btn.dataset.brand);
+                });
+            });
+        }
+
+        // ---------------- PRODUCT CARDS ------------------
+        function renderProducts(filter = 'All') {
+            const list = products.filter(p => filter === 'All' ? true : p.brand === filter);
+
+            productGrid.innerHTML = list.map((p, i) => `
+            <div class="col-sm-6 col-md-4" style="animation-delay:${0.05 * i}s">
+                <div class="card card-product h-100">
+                    <div class="product-thumb">
+                        <img src="${p.img}" style="max-height:150px; object-fit:contain; border-radius:12px;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h6>${p.title}</h6>
+                        <p class="small text-muted mb-1">${p.brand} • ${p.type}</p>
+                        <p class="small text-muted">${p.brief}</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <button class="btn btn-sm" style="background:#003a66; color:white; border-radius:15px;" onclick="viewSpec(${p.id})">View</button>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input compare" type="checkbox" data-id="${p.id}" ${selected.has(p.id) ? 'checked' : ''}>
+                                <label class="form-check-label small">Compare</label>
+                            </div>
+                        </div>
+                        <div class="mt-2"><strong>${p.price}</strong></div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+            document.querySelectorAll('.compare').forEach(ch => {
+                ch.addEventListener('change', e => {
+                    const id = Number(e.target.dataset.id);
+                    if (e.target.checked) selected.add(id);
+                    else selected.delete(id);
+                });
+            });
+        }
+
+        // ---------------- VIEW PRODUCT ------------------
+        function viewSpec(id) {
+            const p = products.find(x => x.id === id);
+            if (!p) return;
+
+            compareContent.innerHTML = `
+            <h4>${p.title}</h4>
+            <p><strong>Brand:</strong> ${p.brand}</p>
+            <p><strong>Type:</strong> ${p.type}</p>
+            <p><strong>Speed:</strong> ${p.speed}</p>
+            <p><strong>Price:</strong> ${p.price}</p>
+            <img src="${p.img}" class="img-fluid mt-3" style="max-height:200px;">
+        `;
+            new bootstrap.Modal(document.getElementById('compareModal')).show();
+        }
+
+        // ---------------- COMPARE ------------------
+        compareBtn.onclick = () => {
+            if (selected.size < 2) {
+                alert("Select at least 2 products!");
+                return;
+            }
+
+            const list = [...selected].map(id => products.find(p => p.id === id));
+
+            compareContent.innerHTML = `
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Product</th>
+                            ${list.map(p => `<th>${p.title}</th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Brand</th>
+                            ${list.map(p => `<td>${p.brand}</td>`).join('')}
+                        </tr>
+                        <tr>
+                            <th>Type</th>
+                            ${list.map(p => `<td>${p.type}</td>`).join('')}
+                        </tr>
+                        <tr>
+                            <th>Speed</th>
+                            ${list.map(p => `<td>${p.speed}</td>`).join('')}
+                        </tr>
+                        <tr>
+                            <th>Price</th>
+                            ${list.map(p => `<td>${p.price}</td>`).join('')}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        `;
+
+            new bootstrap.Modal(document.getElementById('compareModal')).show();
+        };
+
+        // ---------------- CLEAR ------------------
+        clearBtn.onclick = () => {
+            selected.clear();
+            renderProducts();
+        };
+
+        // Initial Load
+        renderBrandButtons();
+        renderProducts();
+
+        // Show/Hide Scroll Button
+        const scrollBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 250) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+        // Smooth Scroll to Top
+        scrollBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>

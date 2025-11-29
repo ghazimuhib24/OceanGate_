@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>OceanGate — Home</title>
+
+    <!-- Bootstrap + Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #005b88;
+            --accent: #00E5FF;
+            --muted: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f7f9fc;
+            color: #0b2540;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: linear-gradient(to right,
+                    #001F3F 33%,
+                    #023569 37%,
+                    #002c57 39%,
+                    #012950 41%,
+                    #013568 42%,
+                    #002c57 43%,
+                    #024380 44%,
+                    #002c57 45%,
+                    #042f5b 46%,
+                    #023569 47%,
+                    #042b52 48%,
+                    #023364 49%,
+                    #012e5b 50%,
+                    #07396a 51%,
+                    #024380 52%,
+                    #033262 53%,
+                    #053463 54%,
+                    #022c56 55%,
+                    #033a6e 57%,
+                    #032f5b 58%,
+                    #033461 59%,
+                    #012b54 62%,
+                    #04396e 64%,
+                    #05315c 65%,
+                    #024282 66%,
+                    #033669 67%,
+                    #012c54 68%,
+                    #013669 69%,
+                    #01407a 75%,
+                    #479ef5 100%);
+            padding: 0.6rem 0;
+            backdrop-filter: blur(2px);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        .nav-items{
+            display: flex;
+            position: relative;
+            background-color: #fff;
+            box-shadow: 0 0 1px rgba(24,94,124,0.15),0 6px 12px  rgba(24,94,124,0.15);
+            padding: 0.75rem;
+            border-radius: 99px;
+        }
+        .nav-items *{
+            z-index: 2;
+        }
+        
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 600;
+        }
+
+        .logo-icon svg {
+            width: 45px;
+            height: 45px;
+            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .logo-text h1 {
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: #00E5FF;
+        }
+
+        .logo-text h1 span {
+            color: #ffffff;
+        }
+
+        .logo-text p {
+            margin: 0;
+            font-size: 10px;
+            color: #CCCCCC;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes glow {
+            0% {
+                stroke: #00E5FF;
+            }
+
+            50% {
+                stroke: #002B55;
+            }
+
+            100% {
+                stroke: #00E5FF;
+            }
+        }
+
+        @keyframes glow1 {
+            0% {
+                stroke: #002B55;
+            }
+
+            50% {
+                stroke: #00E5FF;
+            }
+
+            100% {
+                stroke: #002B55;
+            }
+        }
+
+        .logo-icon circle {
+            animation: glow 4s infinite ease-in-out;
+        }
+
+        .logo-icon path {
+            animation: glow1 4s infinite ease-in-out;
+        }
+
+        .animated-text {
+            font-size: 30px;
+            font-weight: bold;
+            animation: colorChange 4s infinite ease-in-out;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #00E5FF;
+            }
+
+            50% {
+                color: #002B55;
+            }
+
+            100% {
+                color: #00E5FF;
+            }
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            padding: 8px 16px !important;
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-toggler {
+            border-color: #99d7ff;
+        }
+
+        .navbar-toggler-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        .hero {
+            background: linear-gradient(to right, #001F3F 33%,
+                    #023569 37%,
+                    #002c57 39%,
+                    #012950 41%,
+                    #013568 42%,
+                    #002c57 43%,
+                    #024380 44%,
+                    #002c57 45%,
+                    #042f5b 46%,
+                    #023569 47%,
+                    #042b52 48%,
+                    #023364 49%,
+                    #012e5b 50%,
+                    #07396a 51%,
+                    #024380 52%,
+                    #033262 53%,
+                    #053463 54%,
+                    #022c56 55%,
+                    #033a6e 57%,
+                    #032f5b 58%,
+                    #033461 59%,
+                    #012b54 62%,
+                    #04396e 64%,
+                    #05315c 65%,
+                    #024282 66%,
+                    #033669 67%,
+                    #012c54 68%,
+                    #013669 69%,
+                    #01407a 75%,
+                    #479ef5 100%);
+            color: #fff;
+            padding: 4rem 0;
+            overflow: hidden;
+        }
+
+        .hero h1,
+        .hero p,
+        .hero .btn {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s forwards;
+        }
+
+        .hero h1 {
+            animation-delay: 0.3s;
+        }
+
+        .hero p {
+            animation-delay: 0.6s;
+        }
+
+        .hero .btn {
+            animation-delay: 0.9s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+.hero .btn {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s forwards;
+}
+
+.hero .btn:nth-child(1) { animation-delay: 0.9s; }
+.hero .btn:nth-child(2) { animation-delay: 1.1s; }
+.hero .btn:nth-child(3) { animation-delay: 1.3s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Make buttons responsive */
+.hero-buttons {
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: flex-start; /* Align left, change if needed */
+    gap: 0.5rem; /* Spacing between buttons */
+}
+
+@media (max-width: 768px) {
+    .hero-buttons {
+        justify-content: center; /* Center on tablets and phones */
+    }
+    .hero .btn {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+        .card-spot {
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(3, 37, 65, .08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-spot:hover {
+            transform: scale(1.051);
+            box-shadow: 0 15px 40px rgba(3, 37, 65, .15);
+            transition: 2s ease-in-out;
+        }
+
+
+        .feature-icon {
+            font-size: 28px;
+            color: var(--accent);
+        }
+
+       .product-card {
+
+            object-fit: cover;
+            overflow: hidden;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border: 1.5px solid whitesmoke;
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            align-items: end;
+            padding: 20px;
+            color: rgb(240, 227, 227);
+            background-size: 185%;
+            background-repeat: no-repeat;
+            transition: background-size 0.8s ease 0.2s;
+            font-size: 10px;
+            box-shadow: -7px 8px 15px rgb(28, 53, 99);
+        }
+
+        .product-card:hover {
+            background-size: 235%;
+            font-size: 30px;
+        }
+
+
+        footer {
+            background: linear-gradient(to right, #001F3F 33%,
+                    #023569 37%,
+                    #002c57 39%,
+                    #012950 41%,
+                    #013568 42%,
+                    #002c57 43%,
+                    #024380 44%,
+                    #002c57 45%,
+                    #042f5b 46%,
+                    #023569 47%,
+                    #042b52 48%,
+                    #023364 49%,
+                    #012e5b 50%,
+                    #07396a 51%,
+                    #024380 52%,
+                    #033262 53%,
+                    #053463 54%,
+                    #022c56 55%,
+                    #033a6e 57%,
+                    #032f5b 58%,
+                    #033461 59%,
+                    #012b54 62%,
+                    #04396e 64%,
+                    #05315c 65%,
+                    #024282 66%,
+                    #033669 67%,
+                    #012c54 68%,
+                    #013669 69%,
+                    #01407a 75%,
+                    #479ef5 100%);
+            color: #dfefff;
+            padding: 0.5rem 0;
+        }
+
+        footer a {
+            color: #00E5FF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* SOCIAL ICONS */
+        .social-icons a {
+            font-size: 1.4rem;
+            color: var(--brand);
+            margin-right: 1rem;
+            transition: 0.3s;
+        }
+
+        @media (max-width:576px) {
+            .hero {
+                padding: 2.2rem 0;
+            }
+        }
+
+      /* --- FEATURES Section --- */
+.feature-card {
+    display: flex;
+    align-items: stretch; /* Ensure cards are same height */
+}
+
+/* Stack cards vertically on small screens */
+@media (max-width: 992px) {
+    .feature-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* --- ABOUT Sections --- */
+.about-section img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 55vh; /* Adjust max height for smaller screens */
+}
+
+/* Ensure text and images stack properly */
+@media (max-width: 768px) {
+    .about-section .row {
+        flex-direction: column-reverse; /* text above image on small screens if needed */
+    }
+    .about-section h2 {
+        text-align: center;
+    }
+    .about-section p,
+    .about-section ul {
+        text-align: center;
+    }
+}
+
+/* --- Buttons: .b and #bm --- */
+.b, #bm {
+    width: auto; /* default auto */
+}
+
+/* Full width buttons on small screens for better tap */
+@media (max-width: 768px) {
+    .b, #bm {
+        width: 100%;
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+
+        .b {
+            --glow-color: rgb(76, 168, 229);
+            --glow-spread-color: rgba(82, 136, 229, 0.954);
+            --enhanced-glow-color: rgb(101, 195, 239);
+            --btn-color: #042a51;
+            border: 0.2em solid var(--glow-color);
+            padding: 0.4em 0.7em;
+            color: var(--glow-color);
+            font-size: 15px;
+            cursor: pointer;
+            background-color: var(--btn-color);
+            border-radius: 1em;
+            outline: none;
+            box-shadow: 0 0 0.2em 0.1em var(--glow-color),
+                0 0 1.5em 0.25em var(--glow-spread-color),
+                inset 0 0 0.34em 0.1em var(--glow-color);
+            text-shadow: 0 0 0.2em var(--glow-color);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .b::after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            top: 120%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--glow-spread-color);
+            filter: blur(2em);
+            opacity: 0.7;
+            transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+        }
+
+        .b:hover {
+            color: var(--btn-color);
+            background-color: var(--glow-color);
+            box-shadow: 0 0 0.5em 0.1em var(--glow-color),
+                0 0 1.5em 0.5em var(--glow-spread-color),
+                inset 0 0 0.33em 0.1em var(--glow-color);
+        }
+
+        .b:active {
+            box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+        }
+
+        #bm {
+            --glow-color: rgb(89, 151, 192);
+            --glow-spread-color: rgba(82, 136, 229, 0.954);
+            --enhanced-glow-color: rgb(101, 195, 239);
+            --btn-color: #042a51;
+            border: 0.25em solid var(--glow-color);
+            padding: 0.9em 2em;
+            color: var(--glow-color);
+            font-size: 15px;
+            cursor: pointer;
+            background-color: var(--btn-color);
+            border-radius: 1em;
+            outline: none;
+            box-shadow: 0 0 0.2em 0.1em var(--glow-color),
+                0 0 1.5em 0.25em var(--glow-spread-color),
+                inset 0 0 0.34em 0.1em var(--glow-color);
+            text-shadow: 0 0 0.2em var(--glow-color);
+            position: relative;
+            transition: all 0.3s;
+            font-weight: bold;
+            margin-top: 1.7rem;
+        }
+
+        #bm:hover {
+            color: var(--btn-color);
+            background-color: var(--glow-color);
+            box-shadow: 0 0 0.5em 0.1em var(--glow-color),
+                0 0 1.5em 0.5em var(--glow-spread-color),
+                inset 0 0 0.33em 0.1em var(--glow-color);
+        }
+
+        #bm:active {
+            box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+        }
+
+        /* Social Icon Circles */
+        .social-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            color: rgb(255, 255, 255);
+            transition: all 0.3s ease;
+        }
+
+        .social-circle:hover {
+            background: #00c6ff;
+            box-shadow: 0 0 10px #00c6ff;
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer-social {
+            justify-content: center !important;
+            width: 100%;
+        }
+
+        /* --- RESPONSIVENESS ENHANCEMENTS --- */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .product-card h4 {
+                font-size: 1rem;
+            }
+
+            .product-card a.btn {
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .hero .col-lg-5 {
+                display: block !important;
+                margin-top: 2rem;
+            }
+
+            .about-section img {
+                max-width: 100%;
+                height: auto !important;
+            }
+
+            .collection {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.85rem;
+            }
+
+            .product-card {
+                height: auto;
+            }
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Floating Scroll-to-Top Button */
+        .footer-circle-btn {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 58px;
+            height: 58px;
+            background:  linear-gradient(135deg, #1060a2, #022948);
+            /* OceanGate Dark Blue */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+            transition: 0.3s ease;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Show button when scrolling */
+        .footer-circle-btn.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Hover Effect */
+        .footer-circle-btn:hover {
+            background: linear-gradient(135deg, #0d4777, #011b31);
+            /* Lighter Blue */
+            box-shadow: 0 0 18px rgba(30, 106, 176, 0.7);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand text-white d-flex align-items-center" href="#">
+                <div class="logo-pro d-flex align-items-center gap-2">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 120 120" width="50" height="50">
+                            <defs>
+                                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00E5FF" />
+                                    <stop offset="100%" style="stop-color:#007BFF" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="60" cy="60" r="50" stroke="url(#grad)" stroke-width="6" fill="none" />
+                            <path d="M10 70 Q40 30 70 70 T130 70" stroke="#00E5FF" stroke-width="5" fill="none" />
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1 style="font-weight: bold ; padding-top: 5px;" class="animated-text">
+                            𝕆ℂ𝔼𝔸ℕ<span>𝔾𝔸𝕋𝔼</span>
+                        </h1>
+                        <p style="padding: 3px;"> <i>Innovating Data Storage</i></p>
+                    </div>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-5 fw-bold"> ℝ𝕖𝕝𝕚𝕒𝕓𝕝𝕖 𝔻𝕒𝕥𝕒 𝕤𝕥𝕠𝕣𝕒𝕘𝕖 𝕠𝕡𝕥𝕚𝕔𝕒𝕝 &
+                        𝕞𝕒𝕘𝕟𝕖𝕥𝕚𝕔 𝕞𝕖𝕕𝕚𝕒</h1>
+                    <p class="lead text-white-50 fw-bol"><i>High quality discs, HDDs and SSDs for personal and
+                            enterprise use.
+                            Browse by brand, compare models and download detailed spec sheets.</i></p>
+                    <p class="hero-buttons d-flex flex-wrap gap-2">
+    <a href="products.html" class="btn btn-light btn-lg" id="bm">View Products</a>
+    <a href="contact.html" class="btn btn-outline-light btn-lg" id="bm">Contact Sales</a>
+    <a href="support.html" class="btn btn-outline-light btn-lg" id="bm">Support</a>
+</p>
+
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="card card-spot p-3 animate-bounce"
+                        style="filter: drop-shadow(1px 1px 15px rgb(1, 27, 83));">
+                        <!-- <img style="height: 50vh;" src="https://i.redd.it/3w667do8qmua1.jpg"> -->
+                         <video autoplay loop muted plays-line class="back-video" style="border-radius: 10px;">
+                            <source src="/Hailuo_Video_generate video of branding of _450823731267858432.mp4" style="height: 50vh;">
+                         </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- FEATURES -->
+    <section class=" py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 feature-card">
+                    <div class="p-4 bg-white rounded card-spot h-100">
+                        <div class="mb-2 feature-icon">💾</div>
+                        <h5>Wide Product Range</h5>
+                        <p class="text-muted">Optical discs, HDD, SSD — personal to enterprise
+                            solutions, organized by
+                            brand for fast browsing.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 feature-card">
+                    <div class="p-4 bg-white rounded card-spot h-100">
+                        <div class="mb-2 feature-icon">🔎</div>
+                        <h5>Brand Filters</h5>
+                        <p class="text-muted">Click a brand to show only that brand’s products — quick
+                            and intuitive
+                            categorization.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 feature-card">
+                    <div class="p-4 bg-white rounded card-spot h-100">
+                        <div class="mb-2 feature-icon">⚖</div>
+                        <h5>Compare Models</h5>
+                        <p class="text-muted">Select multiple products to compare specs side-by-side
+                            before you buy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- 70% Text (Left Side) -->
+                <div class="col-md-7">
+                    <h2 class="fw-bold mb-3" style="color: #013568;">About OceanGate</h2>
+
+                    <p class="text-muted fs-6">
+                        OceanGate is a global marine logistics company providing safe, fast,
+                        and efficient transportation solutions worldwide. With advanced
+                        technology, expert teams, and international partnerships,
+                        we ensure reliable shipping, tracking, and cargo handling
+                        for clients around the world.
+                    </p>
+
+                    <p class="text-muted fs-6">
+                        Our mission is to deliver excellence on every wave — from port
+                        operations to fleet management and transportation services.
+                    </p>
+
+                    <ul class="list-unstyled mt-3 text-muted">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> Highly Secure Data
+                            Protection</li>
+
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> Certified Products
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- 30% Image (Right Side) -->
+                <div class="col-md-5 mt-4 mt-md-0" style="filter: drop-shadow(1px 1px 7px rgb(1, 27, 83));">
+                    <img src="https://img.freepik.com/premium-photo/circuit-board-background-electronic-computer-hardware-technology_844516-5284.jpg"
+                        alt="Why Choose OceanGate" class="img-fluid rounded shadow" style="height: 55vh;">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- 30% Image -->
+                <div class="col-md-5" style="filter: drop-shadow(1px 1px 8px rgb(1, 27, 83));">
+                    <img src="https://wallpapers.com/images/hd/cloud-storage-3d-icon-artwork-wdi1wu6xthhwqp6u.jpg"
+                        alt="About OceanGate" class="img-fluid rounded shadow" style="height: 53vh;">
+                </div>
+
+                <!-- 70% Text -->
+                <!-- 70% Text (Left Side) -->
+                <div class="col-md-7">
+                    <h2 class="fw-bold mb-3" style="color:  #013568;">Why You Choose OceanGate</h2>
+
+                    <p class="text-muted fs-6">
+                        OceanGate provides reliable, secure, and high performance data-storage solutions
+                        built for both individuals and businesses. With advanced technology, seamless
+                        accessibility, and trusted protection, we ensure your data always stays safe,
+                        organized, and available whenever you need it.
+                    </p>
+
+                    <p class="text-muted fs-6">
+                        Our commitment is to deliver speed, security, and simplicity helping you manage
+                        your digital world with complete confidence.
+                    </p>
+
+                    <ul class="list-unstyled mt-3 text-muted">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> 24/7 Customer Support</li>
+
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> Fast & Reliable Cloud
+                            Access</li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PRODUCT PREVIEW -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="h5 mb-0">Featured products</h3>
+                <a href="products.html" class="small"><button class="b">See all products →</button></a>
+            </div>
+
+
+            <div>
+                <h2 class="our" style="text-align: center; padding-bottom: 1.8rem; font-weight: bold; color: #013568;">OUR COLLECTIONS</h2>
+                <P class="collection text-muted ">At OceanGate, we bring you a powerful collection of modern and
+                    secure
+                    data-storage
+                    solutions designed for
+                    both individuals and businesses. Our platform is built to keep your files safe, organized, and
+                    always
+                    accessible whether you're storing important documents, media, or large scale project data. Each
+                    product
+                    in our collection is optimized for speed, reliability, and seamless cloud integration, ensuring that
+                    your digital world stays protected and connected at all times.</P>
+            </div>
+
+            <!-- Products Cards -->
+             <div class="container py-5">
+                <div class="row g-4">
+
+                    <div class="col-md-3">
+                        <div class="product-card"
+                            style="background-image:url('https://images.unsplash.com/photo-1597852074816-d933c7d2b988?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29tcHV0ZXIlMjBzdG9yYWdlfGVufDB8fDB8fHww');">
+                            <div class="twb">
+                                <h4>𝕮𝕯𝖘 𝖘𝖙𝖔𝖗𝖆𝖌𝖊</h4>
+                                <a href="products.html" class="btn btn-outline-light  mt-2" style="width: 13em;">View
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="product-card"
+                            style="background-image:url('https://img.goodfon.com/wallpaper/big/0/b6/pamyat-operativka-makro-chip.webp');">
+                            <div class="twb">
+                                <h4>𝕸𝖎𝖈𝖗𝖔 𝕮𝖍𝖎𝖕𝖘</h4>
+                                <a href="products.html" class="btn btn-outline-light mt-2" style="width: 13em;">View
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="product-card"
+                            style="background-image:url('https://media.istockphoto.com/id/1137996299/photo/closeup-group-of-ssd-on-background-3d.jpg?s=612x612&w=0&k=20&c=XbSwNJn6oiL6AnydrD--zp33o9Xm3Zbzh3tQINhb1-8=');">
+                            <div class="twb">
+                                <h4>𝓗𝕯𝕯 𝖘𝖙𝖔𝖗𝖆𝖌𝖊</h4>
+                                <a href="products.html" class="btn btn-outline-light mt-2" style="width: 13em;">View
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="product-card"
+                            style="background-image:url('https://img.freepik.com/premium-photo/usb-flash-drive-memory-card-computer-place-office-desk_69695-12.jpg');">
+                            <div class="twb">
+                                <h4>𝖀𝖘𝖇𝖘 𝖘𝖙𝖔𝖗𝖆𝖌𝖊</h4>
+                                <a href="products.html" class="btn btn-outline-light mt-2" style="width: 13em;">View
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container ">
+
+            <!-- Top Section -->
+            <div class="row">
+                <div class="col-md-6 ">
+                    <h4 class="text-primary fw-bold">Ocean Gate</h4>
+                    <p>
+                        OceanGate is your trusted storage devices program delivering best product,
+                        variety and guarenteed products and services with reliability and excellence.
+                    </p>
+                </div>
+
+                <!-- Services -->
+                <div class="col-md-3">
+                    <h5 class="text-primary fw-semibold">Services</h5>
+                    <ul class="list-unstyled text-small ">
+                        <li>Good product</li>
+                        <li>Repairing services</li>
+                    </ul>
+                </div>
+
+
+                <!-- About -->
+                <div class="col-md-3">
+                    <h5 class="text-primary fw-semibold">Company</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="link-light" href="#about">About Us</a></li>
+                        <li><a class="link-light" href="support.html#team">Team</a></li>
+                        <li><a class="link-light" href="support.html">Support</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Divider -->
+            <hr>
+
+            <!-- FOLLOW US (Centered After HR) -->
+            <div class="text-center mb-4">
+
+                <h5 class="fw-bold mb-3">Follow Us</h5>
+
+                <div class="d-flex justify-content-center gap-3 footer-social">
+
+                    <a href="https://www.facebook.com/" target="_blank" class="social-circle">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/" target="_blank" class="social-circle">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="https://wa.me/923001234567" target="_blank" class="social-circle">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/" target="_blank" class="social-circle">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/" target="_blank" class="social-circle">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                </div>
+                
+                
+                <a href="#" id="scrollTopBtn" class="footer-circle-btn">
+                    <i class="bi bi-chevron-up"></i>
+                </a>
+
+                    <!-- Bottom Row -->
+                <div>
+                    <div class="text-center">© 2025 OceanGate. All rights reserved.</div>
+
+                </div>  
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+         // Show/Hide Scroll Button
+        const scrollBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 250) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+        // Smooth Scroll to Top
+        scrollBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</body>
+
+</html>
